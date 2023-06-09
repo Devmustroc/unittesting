@@ -4,7 +4,7 @@ from post import Post
 
 class PostTest(TestCase): # Create a new class that inherits from TestCase
     def test_create_post(self): # Test that we can create a post with a title and content
-        p = Post('Test', 'Test Content', 'Author', 'new')  # Create a new post object
+        p = Post('Test', 'Test Content', 'Author')  # Create a new post object
         self.assertEqual('Test', p.title)  # Assert that the title of the post object is 'Test'
         self.assertEqual('Test Content', p.content)  # Assert that the content of the post object is 'Test Content'
         self.assertEqual('Author', p.author)  # Assert that the author of the post object is 'Author'
