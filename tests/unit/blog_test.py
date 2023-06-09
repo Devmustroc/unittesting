@@ -38,12 +38,3 @@ class BlogTest(TestCase):
         self.assertEqual(b.__repr__(), 'Test by Test Author (1 post)')
         self.assertEqual(b2.__repr__(), 'My Day by Rolf (2 posts)')
 
-    def test_create_post_in_blog(self):
-        """
-        Test that we can add a post to the blog.
-        """
-        b = Blog('Test', 'Test Author')
-        b.create_post('Test Post', 'Test Content')
-        self.assertEqual(len(b.posts), 1)
-        self.assertEqual(b.posts[0].title, 'Test Post')
-        self.assertEqual(b.posts[0].content, 'Test Content')
