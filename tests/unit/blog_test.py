@@ -6,6 +6,7 @@ class BlogTest(TestCase):
     """
     Test methods in the Blog class.
     """
+
     def test_create_blog(self):
         b = Blog('Test', 'Test Author')
         self.assertEqual('Test', b.title)
@@ -21,7 +22,6 @@ class BlogTest(TestCase):
         b2 = Blog('My Day', 'Rolf')
         self.assertEqual(b.__repr__(), 'Test by Test Author (0 posts)')
         self.assertEqual(b2.__repr__(), 'My Day by Rolf (0 posts)')
-
 
     def test_repr_multiple_postes(self):
         """
