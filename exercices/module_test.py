@@ -37,3 +37,11 @@ class TestURLPrint(TestCase):
         with patch("sys.stdout", new=StringIO()) as new_f:
             mymodule.new_link(hs, dm, sub)
             self.assertEqual(new_f.getvalue(), expected_url)
+
+    def test_pass_word(self):
+        name = {"first": "John", "second": "Jason", "third": "Jules", "fourth": "Jude"}
+        expected_url = "first : John\nsecond : Jason\nthird : Jules\nfourth : Jude\n"
+
+        with patch("sys.stdout", new=StringIO()) as new_f:
+            mymodule.pass_wrd(**name)
+            self.assertEqual(new_f.getvalue(), expected_url)
